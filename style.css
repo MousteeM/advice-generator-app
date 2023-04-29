@@ -27,13 +27,15 @@ body {
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
   position: relative;
   background-color: hsl(217, 19%, 24%);
   max-width: 33rem;
   width: 95%;
   margin: 10rem auto;
   border-radius: 0.5rem;
-  padding: 2rem;
+  padding: 2rem 2rem 0;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -69,13 +71,14 @@ body {
   border-radius: 50%;
   width: 50px;
   height: 50px;
-  position: absolute;
-  left: 50%;
+  /* position: absolute; */
+  /* left: 50%;
   bottom: -23%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: -1.5rem;
 }
 
 .icon-dice:hover {
@@ -92,20 +95,20 @@ body {
 /* Media Queries */
 @media (min-width: 768px) {
   .container {
-    padding: 2.6rem 1.5rem;
+    padding: 2.6rem 1.5rem 0;
   }
 
   .divider img {
     width: 95%;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
   }
 
-  .icon-dice {
+  /* .icon-dice {
     position: absolute;
     left: 50%;
     bottom: -22%;
     transform: translate(-50%, -50%);
-  }
+  } */
 }
 
 .attribution {

@@ -1,15 +1,23 @@
-fetch("https://api.adviceslip.com/advice")
-  .then((response) => response.json())
-  .then((data) => {
-    const advice = data.slip;
-    const button = document.querySelector(".icon-dice");
-    const adviceText = document.querySelector(".advice-text");
-    const id = document.getElementById("advice-id-num");
-
-    button.addEventListener("click", () => {
-      adviceText.textContent = `${advice.advice}`;
-      id.textContent = `${advice.id}`;
+function generateAdvice() {
+  return fetch("https://api.adviceslip.com/advice")
+    .then((response) => response.json())
+    .then((data) => {
+      //   console.log(data);
+      return data;
     });
+}
 
-    console.log(advice);
+generateAdvice();
+
+const button = document.querySelector(".icon-dice");
+
+button.addEventListener("click", () => {
+  generateAdvice().then((data) => {
+    const { id, advice } = data.slip;
+    const adviceText = document.querySelector(".advice-text");
+    const adviceId = document.getElementById("advice-id-num");
+    // console.log(id, advice);
+    adviceText.textContent = `"${advice}"`;
+    adviceId.textContent = `Advice # ${id}`;
   });
+});
