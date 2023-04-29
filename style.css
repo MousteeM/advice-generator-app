@@ -27,10 +27,11 @@ body {
 }
 
 .container {
+  position: relative;
   background-color: hsl(217, 19%, 24%);
   max-width: 33rem;
   width: 95%;
-  margin: 50px auto;
+  margin: 10rem auto;
   border-radius: 0.5rem;
   padding: 2rem;
   align-items: center;
@@ -70,7 +71,7 @@ body {
   height: 50px;
   position: absolute;
   left: 50%;
-  bottom: 53%;
+  bottom: -23%;
   transform: translate(-50%, -50%);
   display: flex;
   justify-content: center;
@@ -102,7 +103,7 @@ body {
   .icon-dice {
     position: absolute;
     left: 50%;
-    bottom: 60%;
+    bottom: -22%;
     transform: translate(-50%, -50%);
   }
 }
